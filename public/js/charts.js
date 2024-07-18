@@ -70,15 +70,46 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 1000);
 });
 
+// Define variables to keep track of stop times for each category
+let stopTimes = {
+    'Breakdown': 0,
+    'Quality': 0,
+    'Start Up': 0,
+    'Tool': 0,
+    'Others': 0
+};
+
+// Function to update the chart data
+function updateChartData() {
+    stopCategoryChart.data.datasets[0].data = [
+        stopTimes['Breakdown'],
+        stopTimes['Quality'],
+        stopTimes['Start Up'],
+        stopTimes['Tool'],
+        stopTimes['Others']
+    ];
+    stopCategoryChart.update();
+}
+
+function updateStopTimes() {
+    document.getElementById('breakdown-time').innerText = stopTimes['Breakdown'].toFixed(1) + ' min';
+    document.getElementById('quality-time').innerText = stopTimes['Quality'].toFixed(1) + ' min';
+    document.getElementById('start-up-time').innerText = stopTimes['Start Up'].toFixed(1) + ' min';
+    document.getElementById('tool-time').innerText = stopTimes['Tool'].toFixed(1) + ' min';
+    document.getElementById('others-time').innerText = stopTimes['Others'].toFixed(1) + ' min';
+    // Update the shift element if needed
+    // document.getElementById('shift').innerText = <shift_value>;
+}
+
 // Tabel Summary Stop Category
 const ctx = document.getElementById('stopCategoryChart').getContext('2d');
 const stopCategoryChart = new Chart(ctx, {
     type: 'bar',
     data: {
-        labels: ['Breakdown', 'Dandori', 'Start Up', 'Tool', 'Others'],
+        labels: ['Breakdown', 'Quality', 'Start Up', 'Tool', 'Others'],
         datasets: [{
             label: 'Time (minutes)',
-            data: [14.30, 1.14, 0.812, 3.50, 4.3],
+            data: [0, 0, 0, 0, 0],
             backgroundColor: '#2279e3',
         }]
     },

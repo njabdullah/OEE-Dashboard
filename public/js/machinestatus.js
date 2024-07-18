@@ -78,6 +78,17 @@ function updateMachineStatus(adjustedDate, adjustedTime) {
                     totalStopTime += 0.1;
                     if (activeStopEntry) {
                         troubleInformationElement.textContent = activeStopEntry.downtimedesc;
+
+                        // Update the stop times for each category
+                        if (stopTimes[activeStopEntry.downtimedesc] !== undefined) {
+                            stopTimes[activeStopEntry.downtimedesc] += 0.1;
+                        } else {
+                            stopTimes['Others'] += 0.1;
+                        }
+
+                        // Update the chart data
+                        updateChartData();
+                        updateStopTimes();
                     }
                     totalStopTimeElement.textContent = totalStopTime.toFixed(1) + ' min';
                     loadingTime = operationTime + totalStopTime;

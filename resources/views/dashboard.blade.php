@@ -85,19 +85,19 @@
                     <div class="summary-stop-timer">
                         <table>
                             <tr>
-                                <td>1 min</td>
+                                <td id="breakdown-time">0.0 min</td>
                             </tr>
                             <tr>
-                                <td>5 min</td>
+                                <td id="quality-time">0.0 min</td>
                             </tr>
                             <tr>
-                                <td>6 min</td>
+                                <td id="startup-time">0.0 min</td>
                             </tr>
                             <tr>
-                                <td>1 min</td>
+                                <td id="tool-time">0.0 min</td>
                             </tr>
                             <tr>
-                                <td>2 min</td>
+                                <td id="others-time">0.0 min</td>
                             </tr>
                         </table>
                     </div>
