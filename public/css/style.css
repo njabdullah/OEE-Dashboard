@@ -1,0 +1,304 @@
+body {
+    background-color: #121212;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+}
+
+.dashboard {
+    width: 99%;
+    margin: 15px 15px 0px;
+    padding: 5px;
+    background-color: #1e1e1e;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.header h1 {
+    margin: 0px 10px;
+    font-size: 24px;
+}
+
+.date-time {
+    display: flex;
+    margin: 0px 10px;
+    gap: 20px;
+    font-size: 18px;
+    color: #ffffff; 
+}
+
+/* first section (machine information, status, and trouble information) */
+.basic-info {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.machine-info {
+    flex: 4;
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 0 5px;
+    background-color: #333333;
+}
+
+.machine-title {
+    display: flex;
+    justify-content: space-around;
+    padding: 5px;
+    background-color: #2a2a2a;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    font-size: 15px;
+}
+
+.machine-detail {
+    display: flex;
+    justify-content: space-around;
+    padding: 5px;
+    background-color: #2a2a2a;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+.status-machine {
+    flex: 2;
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 0 5px;
+    background-color: #333333;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.status-machine .label {
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+.status-machine .value {
+    color: #ff3333;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.trouble-info {
+    flex: 2;
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 0 5px;
+    background-color: #333333;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.trouble-info .label {
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+.trouble-info .value {
+    color: #ff3333;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.metrics {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* second section (total loading time, total stop time, total operation time) */
+.metric {
+    flex: 1;
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 0 5px;
+}
+
+.metric .label {
+    font-size: 15px;
+    margin-bottom: 5px;
+    color: #ffffff;
+}
+
+.metric .value {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.total-loading-time {
+    background-color: #333333;
+    color: #3399ff;
+}
+
+.total-stop-time {
+    background-color: #333333;
+    color: #ff3333;
+}
+
+.total-operation-time {
+    background-color: #333333;
+    color: #33cc33;
+}
+
+/* third section (availability, performance, quality, and OEE) */
+.gauge-charts {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.gauge {
+    background-color: #333333;
+    border-radius: 5px;
+    flex: 2;
+    text-align: center;
+    margin: 0 5px;
+    padding: 5px;
+}
+
+.oee {
+    flex: 3;
+}
+
+.gauge .gauge-title {
+    font-size: 15px;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+/* fourth section (summaries) */
+.summary {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.summary h2 {
+    text-align: center;
+    font-size: 15px;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    font-weight: normal;
+}
+
+.summary-stop {
+    background-color: #333333;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 0 5px;
+    flex: 2;
+}
+
+.summary-stop-detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.summary-stop-container {
+    background-color: #333333;
+    border-radius: 5px;
+    height: 230px;
+    width: 100px;
+    margin: 0;
+    padding: 0;
+    flex: 8;
+}
+
+.summary-stop-timer {
+    flex: 1;
+    margin-left: 10px;
+}
+
+.summary-stop-timer td {
+    font-size: 10px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+
+.summary-output {
+    display: flex;
+    flex-direction: column;
+    background-color: #333333;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 0 5px;
+    flex: 4;
+}
+
+.output-time table,
+.quality-loss-time table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 40px;
+    background-color: #2a2a2a;
+}
+
+.output-time th,
+.output-time td,
+.quality-loss-time th,
+.quality-loss-time td {
+    border: 3px solid #333333;
+    padding: 5px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: normal;
+}
+
+.summary-oee-loss {
+    background-color: #333333;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 0 5px;
+    flex: 3;
+    text-align: center;
+}
+
+.oee-vs-loss {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+}
+
+.oee-vs-loss-chart {
+    width: 200px;
+    height: 200px;
+}
+
+.oee-vs-loss-legend {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 5px;
+}
+
+.oee-vs-loss-legend .legend-detail {
+    font-size: 13px;
+}
+
+.type {
+    text-align: left;
+}

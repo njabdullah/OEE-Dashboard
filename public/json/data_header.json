@@ -1,0 +1,11 @@
+[
+	{
+		"line" : "A01",
+		"linedesc" : "JKT Line Assy A",
+		"tanggal" : "03\/07\/2024",
+		"shift" : 1,
+		"start_prod" : "21:00",
+		"finish_prod" : "07:30",
+		"worktime" : 575
+	}
+]

@@ -1,0 +1,858 @@
+[
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "AAH",
+		"timestamp_capture" : "2024-07-02 21:02:28"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "AAH",
+		"timestamp_capture" : "2024-07-02 21:09:26"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "AAH",
+		"timestamp_capture" : "2024-07-02 21:14:53"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "AAH",
+		"timestamp_capture" : "2024-07-02 21:19:19"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "AAH",
+		"timestamp_capture" : "2024-07-02 21:24:21"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "AAH",
+		"timestamp_capture" : "2024-07-02 21:28:43"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "AAH",
+		"timestamp_capture" : "2024-07-02 21:32:30"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "AAH",
+		"timestamp_capture" : "2024-07-02 21:37:45"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "AAH",
+		"timestamp_capture" : "2024-07-02 21:41:44"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "AAH",
+		"timestamp_capture" : "2024-07-02 21:45:47"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "AAH",
+		"timestamp_capture" : "2024-07-02 21:49:42"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "AAH",
+		"timestamp_capture" : "2024-07-02 21:53:13"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "AAH",
+		"timestamp_capture" : "2024-07-02 21:57:30"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "AAH",
+		"timestamp_capture" : "2024-07-02 22:01:10"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "AAH",
+		"timestamp_capture" : "2024-07-02 22:05:35"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "AAH",
+		"timestamp_capture" : "2024-07-02 22:09:41"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "AAH",
+		"timestamp_capture" : "2024-07-02 22:13:33"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "AAH",
+		"timestamp_capture" : "2024-07-02 22:17:42"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "AAH",
+		"timestamp_capture" : "2024-07-02 22:23:02"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "AAH",
+		"timestamp_capture" : "2024-07-02 22:28:10"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "AAH",
+		"timestamp_capture" : "2024-07-02 22:31:51"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "AAH",
+		"timestamp_capture" : "2024-07-02 22:37:42"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "AAH",
+		"timestamp_capture" : "2024-07-02 22:41:31"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "AAH",
+		"timestamp_capture" : "2024-07-02 22:45:39"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "AAH",
+		"timestamp_capture" : "2024-07-02 22:50:16"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "AAH",
+		"timestamp_capture" : "2024-07-02 22:55:24"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "AAH",
+		"timestamp_capture" : "2024-07-02 23:00:02"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "AAH",
+		"timestamp_capture" : "2024-07-02 23:04:53"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "AAH",
+		"timestamp_capture" : "2024-07-02 23:09:45"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "AAH",
+		"timestamp_capture" : "2024-07-02 23:13:47"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "AAH",
+		"timestamp_capture" : "2024-07-02 23:17:41"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "AAH",
+		"timestamp_capture" : "2024-07-02 23:22:24"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "AAH",
+		"timestamp_capture" : "2024-07-02 23:29:31"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "AAH",
+		"timestamp_capture" : "2024-07-02 23:33:11"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "AAH",
+		"timestamp_capture" : "2024-07-02 23:37:10"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "AAH",
+		"timestamp_capture" : "2024-07-02 23:40:59"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "AAH",
+		"timestamp_capture" : "2024-07-02 23:45:03"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "AAH",
+		"timestamp_capture" : "2024-07-02 23:49:25"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "AAH",
+		"timestamp_capture" : "2024-07-03 00:09:00"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "ACR",
+		"timestamp_capture" : "2024-07-03 00:15:13"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "ACR",
+		"timestamp_capture" : "2024-07-03 00:19:34"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "ACR",
+		"timestamp_capture" : "2024-07-03 00:24:22"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "ACR",
+		"timestamp_capture" : "2024-07-03 00:29:43"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "ACR",
+		"timestamp_capture" : "2024-07-03 00:34:38"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "ACR",
+		"timestamp_capture" : "2024-07-03 00:39:30"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "ACR",
+		"timestamp_capture" : "2024-07-03 00:45:06"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "ACR",
+		"timestamp_capture" : "2024-07-03 00:50:07"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "ACR",
+		"timestamp_capture" : "2024-07-03 00:54:50"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "ACR",
+		"timestamp_capture" : "2024-07-03 01:00:30"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "ACR",
+		"timestamp_capture" : "2024-07-03 01:05:20"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "ACR",
+		"timestamp_capture" : "2024-07-03 01:10:10"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "ACR",
+		"timestamp_capture" : "2024-07-03 01:14:59"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "ACR",
+		"timestamp_capture" : "2024-07-03 01:19:52"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "ACR",
+		"timestamp_capture" : "2024-07-03 01:24:48"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "ACR",
+		"timestamp_capture" : "2024-07-03 01:35:14"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "ACR",
+		"timestamp_capture" : "2024-07-03 01:40:29"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "ACR",
+		"timestamp_capture" : "2024-07-03 01:46:02"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "ACR",
+		"timestamp_capture" : "2024-07-03 01:51:30"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "ACR",
+		"timestamp_capture" : "2024-07-03 01:56:23"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "ACR",
+		"timestamp_capture" : "2024-07-03 02:02:37"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "ACR",
+		"timestamp_capture" : "2024-07-03 02:06:40"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "ACR",
+		"timestamp_capture" : "2024-07-03 02:12:34"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "ACR",
+		"timestamp_capture" : "2024-07-03 02:18:22"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "ABK",
+		"timestamp_capture" : "2024-07-03 02:25:37"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "ABK",
+		"timestamp_capture" : "2024-07-03 02:31:54"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "ABK",
+		"timestamp_capture" : "2024-07-03 02:35:20"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "ABK",
+		"timestamp_capture" : "2024-07-03 02:39:56"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "ABK",
+		"timestamp_capture" : "2024-07-03 02:45:06"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "ABK",
+		"timestamp_capture" : "2024-07-03 02:50:09"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "ABK",
+		"timestamp_capture" : "2024-07-03 02:53:21"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "ABK",
+		"timestamp_capture" : "2024-07-03 02:59:57"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "ABK",
+		"timestamp_capture" : "2024-07-03 03:39:25"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "ABK",
+		"timestamp_capture" : "2024-07-03 03:46:22"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "ABK",
+		"timestamp_capture" : "2024-07-03 03:51:57"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "ABK",
+		"timestamp_capture" : "2024-07-03 03:57:06"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "ABK",
+		"timestamp_capture" : "2024-07-03 04:03:00"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "ABK",
+		"timestamp_capture" : "2024-07-03 04:07:37"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "ABK",
+		"timestamp_capture" : "2024-07-03 04:17:45"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "ABK",
+		"timestamp_capture" : "2024-07-03 04:20:24"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "ABK",
+		"timestamp_capture" : "2024-07-03 04:24:55"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "ABK",
+		"timestamp_capture" : "2024-07-03 04:30:03"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "ABK",
+		"timestamp_capture" : "2024-07-03 04:34:06"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "ABK",
+		"timestamp_capture" : "2024-07-03 04:38:45"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "ABK",
+		"timestamp_capture" : "2024-07-03 04:44:18"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "ABK",
+		"timestamp_capture" : "2024-07-03 05:08:05"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "ABK",
+		"timestamp_capture" : "2024-07-03 05:15:22"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "ABK",
+		"timestamp_capture" : "2024-07-03 05:20:44"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "ABK",
+		"timestamp_capture" : "2024-07-03 05:26:53"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "ABK",
+		"timestamp_capture" : "2024-07-03 05:32:01"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "ABK",
+		"timestamp_capture" : "2024-07-03 05:36:54"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "ABK",
+		"timestamp_capture" : "2024-07-03 05:42:05"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "ABK",
+		"timestamp_capture" : "2024-07-03 05:47:20"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "ABK",
+		"timestamp_capture" : "2024-07-03 05:52:53"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "ABK",
+		"timestamp_capture" : "2024-07-03 05:58:22"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "ABK",
+		"timestamp_capture" : "2024-07-03 06:03:08"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "ABK",
+		"timestamp_capture" : "2024-07-03 06:07:58"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "ABK",
+		"timestamp_capture" : "2024-07-03 06:12:44"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "ABK",
+		"timestamp_capture" : "2024-07-03 06:18:45"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "ABK",
+		"timestamp_capture" : "2024-07-03 06:23:54"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "ABK",
+		"timestamp_capture" : "2024-07-03 06:28:45"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "ABK",
+		"timestamp_capture" : "2024-07-03 06:34:38"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "ABK",
+		"timestamp_capture" : "2024-07-03 06:39:46"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "ABK",
+		"timestamp_capture" : "2024-07-03 06:44:52"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "ABK",
+		"timestamp_capture" : "2024-07-03 06:49:41"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "ABK",
+		"timestamp_capture" : "2024-07-03 06:59:26"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "ABK",
+		"timestamp_capture" : "2024-07-03 07:03:52"
+	},
+	{
+		"line_produksi" : "A01",
+		"nama_line" : "Assy Line A",
+		"tgl_produksi" : "2024-07-03",
+		"shift_produksi" : "1",
+		"tipe_barang" : "ABK",
+		"timestamp_capture" : "2024-07-03 07:09:52"
+	}
+]
