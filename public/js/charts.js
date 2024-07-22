@@ -1,4 +1,5 @@
-// chart avilability, performance, quality, and OEE
+// -------------------------------------------------------------- CHART AVAILABILITY, PERFORMANCE, QUALITY, & OEE (QUALITY STILL STATIC) --------------------------------------------------------------
+let OEE = 0;
 document.addEventListener('DOMContentLoaded', function() {
     const OEEGauge = new JustGage({
         id: "OEEGauge",
@@ -65,13 +66,30 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     setInterval(() => {
-        const availability = (operationTime / loadingTime) * 100;
+        let availability = (operationTime / loadingTime) * 100;
+        if (isNaN(availability) || !isFinite(availability)) availability = 0;
+        if (availability > 100) availability = 100;
         availabilityGauge.refresh(availability.toFixed(2));
-    }, 1000);
+    
+        let performance = ((quantityTotal * 2) / operationTime) * 100;
+        if (isNaN(performance) || !isFinite(performance)) performance = 0;
+        if (performance > 100) performance = 100;
+        performanceGauge.refresh(performance.toFixed(2));
+    
+        let quality = (quantityTotal / quantityTotal) * 100;
+        if (isNaN(quality) || !isFinite(quality)) quality = 0;
+        if (quality > 100) quality = 100;
+        qualityGauge.refresh(quality.toFixed(2));
+    
+        OEE = (availability / 100) * (performance / 100) * (quality / 100) * 100;
+        if (isNaN(OEE) || !isFinite(OEE)) OEE = 0;
+        if (OEE > 100) OEE = 100;
+        OEEGauge.refresh(OEE.toFixed(2));
+    }, 1000);    
 });
 
-// Define variables to keep track of stop times for each category
-let stopTimes = {
+// --------------------------------------------------------------------------- CHART SUMMARY STOP TIME ---------------------------------------------------------------------------
+const stopTimes = {
     'Breakdown': 0,
     'Quality': 0,
     'Start Up': 0,
@@ -79,35 +97,14 @@ let stopTimes = {
     'Others': 0
 };
 
-// Function to update the chart data
-function updateChartData() {
-    stopCategoryChart.data.datasets[0].data = [
-        stopTimes['Breakdown'],
-        stopTimes['Quality'],
-        stopTimes['Start Up'],
-        stopTimes['Tool'],
-        stopTimes['Others']
-    ];
-    stopCategoryChart.update();
-}
-
-function updateStopTimes() {
-    document.getElementById('breakdown-time').innerText = stopTimes['Breakdown'].toFixed(1) + ' min';
-    document.getElementById('quality-time').innerText = stopTimes['Quality'].toFixed(1) + ' min';
-    document.getElementById('start-up-time').innerText = stopTimes['Start Up'].toFixed(1) + ' min';
-    document.getElementById('tool-time').innerText = stopTimes['Tool'].toFixed(1) + ' min';
-    document.getElementById('others-time').innerText = stopTimes['Others'].toFixed(1) + ' min';
-}
-
-// Tabel Summary Stop Category
 const ctx = document.getElementById('stopCategoryChart').getContext('2d');
 const stopCategoryChart = new Chart(ctx, {
     type: 'bar',
     data: {
-        labels: ['Breakdown', 'Quality', 'Start Up', 'Tool', 'Others'],
+        labels: Object.keys(stopTimes),
         datasets: [{
             label: 'Time (minutes)',
-            data: [0, 0, 0, 0, 0],
+            data: Object.values(stopTimes),
             backgroundColor: '#2279e3',
         }]
     },
@@ -138,18 +135,19 @@ const stopCategoryChart = new Chart(ctx, {
     }
 });
 
-// Chart OEE vs Loss
+function updateChartData() {
+    stopCategoryChart.data.datasets[0].data = Object.values(stopTimes);
+    stopCategoryChart.update();
+}
+
+// --------------------------------------------------------------------------- CHART OEE VS LOSS ---------------------------------------------------------------------------
 document.addEventListener('DOMContentLoaded', function() {
     const ctx = document.getElementById('OEElossPieChart').getContext('2d');
     const data = {
-        labels: ['Stop Loss', 'Speed Loss', 'OEE'],
+        labels: ['Quality Loss', 'Speed Loss', 'Stop Loss', 'OEE'],
         datasets: [{
-            data: [45, 8, 43],
-            backgroundColor: [
-                '#ff4048',
-                '#ffe716',
-                '#2df726'
-            ],
+            data: [0, 0, 0],
+            backgroundColor: ['#2279e3', '#ffe716', '#ff4048', '#2df726'],
             borderColor: '#333333'
         }]
     };
@@ -170,9 +168,21 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
-    new Chart(ctx, {
+    const pieChart = new Chart(ctx, {
         type: 'doughnut',
         data: data,
         options: options
     });
+
+    function updateOEEvsLoss(totalStopTime, summaryTime, OEE) {
+        const QualityLoss = 0;
+        const SpeedLoss = (summaryTime/loadingTime)*100;
+        const StopLoss = (totalStopTime/loadingTime)*100;
+        pieChart.data.datasets[0].data = [QualityLoss, SpeedLoss, StopLoss, OEE];
+        pieChart.update();
+    }
+
+    setInterval(function() {
+        updateOEEvsLoss(totalStopTime, summaryTime, OEE);
+    }, 1000);
 });

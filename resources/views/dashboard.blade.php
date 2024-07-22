@@ -110,10 +110,10 @@
                     <table>
                         <tr>
                             <th>Type</th>
-                            <th>Ideal Cycle</th>
+                            <th>Standard Cycle</th>
                             <th>Quantity Total</th>
                             <th>Last Capture</th>
-                            <th>Output Time Total</th>
+                            <th>Stop Loss</th>
                         </tr>
                         <tr>
                             <td id="summary-type">-</td>
@@ -124,7 +124,7 @@
                         </tr>
                     </table>
                 </div>
-                <!-- <div class="quality-loss-time">
+                <div class="quality-loss-time">
                     <h2>Quality Loss Time</h2>
                     <table>
                         <tr>
@@ -142,7 +142,7 @@
                             <td>1.20</td>
                         </tr>
                     </table>
-                </div> -->
+                </div>
             </div>
             <div class="summary-oee-loss">
                 <h2>OEE vs Loss</h2>
@@ -173,6 +173,12 @@
                             <tr>
                                 <td style="background-color: #ffe716;"></td>
                                 <td class="type">Speed Loss</td>
+                                <td>35 min</td>
+                                <td>24%</td>
+                            </tr>
+                            <tr>
+                                <td style="background-color: #2279e3;"></td>
+                                <td class="type">Quality Loss</td>
                                 <td>35 min</td>
                                 <td>24%</td>
                             </tr>

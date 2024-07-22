@@ -1,23 +1,31 @@
-function updateSummary(adjustedDate, adjustedTime) {
+let quantityTotal = 0;
+let summaryTime = 0;
+
+function updateSummary(adjustedDate, adjustedTime, operationTime = 0) {
     const currentDateTime = new Date(`${adjustedDate}T${adjustedTime}`);
-    let quantityTotal = 0;
-    let lastCapture = null;
+    quantityTotal = 0;
+    let latestEntry = null;
 
     data_Produksi.forEach(entry => {
         const timestampCapture = new Date(entry.timestamp_capture);
         if (timestampCapture <= currentDateTime) {
             quantityTotal++;
-            lastCapture = timestampCapture;
+            if (!latestEntry || timestampCapture > new Date(latestEntry.timestamp_capture)) {
+                latestEntry = entry;
+            }
         }
     });
 
-    if (lastCapture) {
-        const latestEntry = data_Produksi.find(entry => new Date(entry.timestamp_capture).getTime() === lastCapture.getTime());
-
+    if (latestEntry) {
         document.getElementById('summary-type').textContent = latestEntry.tipe_barang;
-        document.getElementById('summary-ideal').textContent = latestEntry.tipe_barang;
         document.getElementById('summary-quantity').textContent = quantityTotal;
-        document.getElementById('summary-capture').textContent = lastCapture.toISOString().slice(0, 19).replace('T', ' ');
-        document.getElementById('summary-time').textContent = latestEntry.tipe_barang;
+        document.getElementById('summary-capture').textContent = latestEntry.timestamp_capture;
+
+        summaryTime = operationTime - (2 * quantityTotal);
+        if (summaryTime < 0) {
+            summaryTime = 0;
+        }
+        summaryTime = summaryTime.toFixed(1);
+        document.getElementById('summary-time').textContent = summaryTime;
     }
 }

@@ -208,7 +208,7 @@ body {
     border-radius: 5px;
     padding: 10px;
     margin: 0 5px;
-    flex: 2;
+    flex: 1.96;
 }
 
 .summary-stop-detail {
@@ -224,7 +224,7 @@ body {
     width: 100px;
     margin: 0;
     padding: 0;
-    flex: 7;
+    flex: 6;
 }
 
 .summary-stop-timer {
@@ -245,7 +245,7 @@ body {
     border-radius: 5px;
     padding: 10px;
     margin: 0 5px;
-    flex: 4;
+    flex: 4.08;
 }
 
 .output-time table,
@@ -272,7 +272,7 @@ body {
     border-radius: 5px;
     padding: 10px;
     margin: 0 5px;
-    flex: 3;
+    flex: 2.96;
     text-align: center;
 }
 

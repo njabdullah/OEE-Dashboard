@@ -65,6 +65,7 @@ function updateMachineStatus(adjustedDate, adjustedTime) {
                 }, 6000);
             }
         }
+        updateSummary(adjustedDate, adjustedTime, operationTime);
     } else {
         if (machineStatusElement.textContent !== "STOP") {
             machineStatusElement.textContent = "STOP";
@@ -77,14 +78,12 @@ function updateMachineStatus(adjustedDate, adjustedTime) {
                     if (activeStopEntry) {
                         troubleInformationElement.textContent = activeStopEntry.downtimedesc;
 
-                        // Update the stop times for each category
                         if (stopTimes[activeStopEntry.downtimedesc] !== undefined) {
                             stopTimes[activeStopEntry.downtimedesc] += 0.1;
                         } else {
                             stopTimes['Others'] += 0.1;
                         }
-
-                        // Update the chart data
+                        
                         updateChartData();
                     }
                     totalStopTimeElement.textContent = totalStopTime.toFixed(1) + ' min';
@@ -93,5 +92,6 @@ function updateMachineStatus(adjustedDate, adjustedTime) {
                 }, 6000);
             }
         }
+        updateSummary(adjustedDate, adjustedTime, operationTime);
     }
 }

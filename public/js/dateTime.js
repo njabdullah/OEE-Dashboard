@@ -42,6 +42,5 @@ function updateDateTime() {
     timeElement.textContent = time;
 
     updateMachineStatus(date, time);
-    updateSummary(date, time);
     requestAnimationFrame(updateDateTime);
 }
