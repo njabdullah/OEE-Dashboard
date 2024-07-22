@@ -17,7 +17,6 @@ function updateMachineStatus(adjustedDate, adjustedTime) {
     let machineRunning = false;
     let activeStopEntry = null;
 
-    // Check if the machine should be running based on data_header
     for (const entry of data_header) {
         const startDateTime = new Date(`${entry.tanggal}T${entry.start_prod}`);
         const endDateTime = new Date(`${entry.tanggal}T${entry.finish_prod}`);
@@ -32,7 +31,6 @@ function updateMachineStatus(adjustedDate, adjustedTime) {
         }
     }
 
-    // Check if the machine should be stopped based on data_linestop
     let machineStopped = false;
     if (machineRunning) {
         for (const stopEntry of data_Linestop) {
@@ -45,7 +43,7 @@ function updateMachineStatus(adjustedDate, adjustedTime) {
 
             if (currentDateTime >= startTime && currentDateTime <= endTime) {
                 machineStopped = true;
-                activeStopEntry = stopEntry; // Save the active stop entry
+                activeStopEntry = stopEntry;
                 break;
             }
         }
@@ -54,7 +52,7 @@ function updateMachineStatus(adjustedDate, adjustedTime) {
     if (machineRunning && !machineStopped) {
         if (machineStatusElement.textContent !== "RUN") {
             machineStatusElement.textContent = "RUN";
-            troubleInformationElement.textContent = "- - -"; // Clear trouble information
+            troubleInformationElement.textContent = "- - -";
             clearInterval(totalStopInterval);
             totalStopInterval = null;
 
@@ -88,7 +86,6 @@ function updateMachineStatus(adjustedDate, adjustedTime) {
 
                         // Update the chart data
                         updateChartData();
-                        updateStopTimes();
                     }
                     totalStopTimeElement.textContent = totalStopTime.toFixed(1) + ' min';
                     loadingTime = operationTime + totalStopTime;

@@ -10,6 +10,7 @@
     <script src="{{ asset('js/machinedetail.js') }}" defer></script>
     <script src="{{ asset('js/charts.js') }}" defer></script>
     <script src="{{ asset('js/1database.js') }}" defer></script>
+    <script src="{{ asset('js/summaries.js') }}" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.3.0/raphael.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/justgage/1.3.1/justgage.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -105,25 +106,25 @@
             </div>
             <div class="summary-output">
                 <div class="output-time">
-                    <h2>Output Time</h2>
+                    <h2>Summary Output Time</h2>
                     <table>
                         <tr>
                             <th>Type</th>
-                            <th>Output</th>
-                            <th>Cycle Time</th>
-                            <th>Qty Cycle</th>
-                            <th>Output Time</th>
+                            <th>Ideal Cycle</th>
+                            <th>Quantity Total</th>
+                            <th>Last Capture</th>
+                            <th>Output Time Total</th>
                         </tr>
                         <tr>
-                            <td>B234</td>
-                            <td>35</td>
-                            <td>24</td>
-                            <td>1</td>
-                            <td>14</td>
+                            <td id="summary-type">-</td>
+                            <td id="summary-ideal">-</td>
+                            <td id="summary-quantity">-</td>
+                            <td id="summary-capture">-</td>
+                            <td id="summary-time">-</td>
                         </tr>
                     </table>
                 </div>
-                <div class="quality-loss-time">
+                <!-- <div class="quality-loss-time">
                     <h2>Quality Loss Time</h2>
                     <table>
                         <tr>
@@ -141,7 +142,7 @@
                             <td>1.20</td>
                         </tr>
                     </table>
-                </div>
+                </div> -->
             </div>
             <div class="summary-oee-loss">
                 <h2>OEE vs Loss</h2>

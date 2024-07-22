@@ -97,8 +97,6 @@ function updateStopTimes() {
     document.getElementById('start-up-time').innerText = stopTimes['Start Up'].toFixed(1) + ' min';
     document.getElementById('tool-time').innerText = stopTimes['Tool'].toFixed(1) + ' min';
     document.getElementById('others-time').innerText = stopTimes['Others'].toFixed(1) + ' min';
-    // Update the shift element if needed
-    // document.getElementById('shift').innerText = <shift_value>;
 }
 
 // Tabel Summary Stop Category
