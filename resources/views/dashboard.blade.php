@@ -116,22 +116,22 @@
             <div class="summary-output">
                 <div class="output-time">
                     <h2>Summary Output Time</h2>
-                    <table>
-                        <tr>
-                            <th>Type</th>
-                            <th>Standard Cycle</th>
-                            <th>Quantity Total</th>
-                            <th>Last Capture</th>
-                            <th>Speed Loss</th>
-                        </tr>
-                        <tr>
-                            <td id="summary-type">-</td>
-                            <td id="summary-ideal">-</td>
-                            <td id="summary-quantity">-</td>
-                            <td id="summary-capture">-</td>
-                            <td id="summary-time">-</td>
-                        </tr>
-                    </table>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Standard Cycle</th>
+                                    <th>Quantity Total</th>
+                                    <th>Last Capture</th>
+                                    <th>Speed Loss</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Rows will be dynamically added here -->
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
                 <div class="quality-loss-time">
                     <h2>Summary Quality Loss</h2>

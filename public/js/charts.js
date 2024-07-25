@@ -191,9 +191,9 @@ document.addEventListener('DOMContentLoaded', function() {
         options: options
     });
 
-    function updateOEEvsLoss(totalStopTime, summaryTime, OEE) {
+    function updateOEEvsLoss(totalStopTime, operationTime, totalStandardCycleAll, OEE) {
         const QualityLoss = 0;
-        const SpeedLoss = (summaryTime/loadingTime)*100;
+        const SpeedLoss = (Math.max(0, (operationTime - totalStandardCycleAll).toFixed(1))/loadingTime)*100;
         const StopLoss = (totalStopTime/loadingTime)*100;
         pieChart.data.datasets[0].data = [QualityLoss, SpeedLoss, StopLoss, OEE];
         pieChart.update();
@@ -204,7 +204,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('stoploss-final-time').textContent = `${(totalStopTime).toFixed(1)} min`;
         document.getElementById('stoploss-final-percent').textContent = `${StopLoss.toFixed(1)}%`;
 
-        document.getElementById('speedloss-final-time').textContent = `${(summaryTime).toFixed(1)} min`;
+        document.getElementById('speedloss-final-time').textContent = `${(Math.max(0, (operationTime - totalStandardCycleAll).toFixed(1))).toFixed(1)} min`;
         document.getElementById('speedloss-final-percent').textContent = `${SpeedLoss.toFixed(1)}%`;
 
         document.getElementById('qualityloss-final-time').textContent = '0.0 min';
@@ -212,6 +212,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     setInterval(function() {
-        updateOEEvsLoss(totalStopTime, summaryTime, OEE);
+        updateOEEvsLoss(totalStopTime, operationTime, totalStandardCycleAll, OEE);
     }, 1000);
 });

@@ -1,47 +1,61 @@
 let quantityTotal = 0;
-let summaryTime = 0;
-// let standardCycle = 0;
 let totalStandardCycleAll = 0;
 
 function updateSummary(adjustedDate, adjustedTime, operationTime = 0) {
     const currentDateTime = new Date(`${adjustedDate}T${adjustedTime}`);
     quantityTotal = 0;
     totalStandardCycleAll = 0;
-    let latestEntry = null;
-    // let totalStandardCycleAll = 0;
 
+    // Find the latest entry for each tipe_barang
+    const latestEntries = {};
     data_Produksi.forEach(entry => {
         const timestampCapture = new Date(entry.timestamp_capture);
         if (timestampCapture <= currentDateTime) {
-            if (!latestEntry || timestampCapture > new Date(latestEntry.timestamp_capture)) {
-                latestEntry = entry;
+            const tipeBarang = entry.tipe_barang;
+            if (!latestEntries[tipeBarang] || timestampCapture > new Date(latestEntries[tipeBarang].timestamp_capture)) {
+                latestEntries[tipeBarang] = entry;
             }
             totalStandardCycleAll += entry.standard_cycle;
         }
     });
 
-    if (latestEntry) {
-        const currentTipeBarang = latestEntry.tipe_barang;
-        // standardCycle = latestEntry.standard_cycle; // Set the standard cycle for the current tipe_barang
+    // Get the table body element
+    const tbody = document.querySelector('.output-time tbody');
 
-        // Count entries with the same tipe_barang
-        quantityTotal = data_Produksi.filter(entry => {
-            const timestampCapture = new Date(entry.timestamp_capture);
-            return entry.tipe_barang === currentTipeBarang && timestampCapture <= currentDateTime;
-        }).length;
+    // Clear existing rows (except the header)
+    tbody.innerHTML = '';
 
-        document.getElementById('summary-type').textContent = latestEntry.tipe_barang;
-        document.getElementById('summary-ideal').textContent = latestEntry.standard_cycle;
-        document.getElementById('summary-quantity').textContent = quantityTotal;
-        document.getElementById('summary-capture').textContent = latestEntry.timestamp_capture;
+    if (Object.keys(latestEntries).length === 0) {
+        // If no data, add a single row with "-" values
+        const emptyRow = document.createElement('tr');
+        emptyRow.innerHTML = `
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+        `;
+        tbody.appendChild(emptyRow);
+    } else {
+        // Add new rows for each latest entry
+        Object.values(latestEntries).forEach(entry => {
+            quantityTotal = data_Produksi.filter(e => {
+                const timestampCapture = new Date(e.timestamp_capture);
+                return e.tipe_barang === entry.tipe_barang && timestampCapture <= currentDateTime;
+            }).length;
 
-        // Calculate summaryTime using the formula operationTime - (quantityTotal * standardCycle)
-        // summaryTime = operationTime - (quantityTotal * standardCycle);
-        summaryTime = operationTime - totalStandardCycleAll;
-        if (summaryTime < 0) {
-            summaryTime = 0;
-        }
-        summaryTime = parseFloat(summaryTime.toFixed(1));
-        document.getElementById('summary-time').textContent = summaryTime;
+            // Create a new row
+            const newRow = document.createElement('tr');
+            newRow.innerHTML = `
+                <td>${entry.tipe_barang}</td>
+                <td>${entry.standard_cycle}</td>
+                <td>${quantityTotal}</td>
+                <td>${entry.timestamp_capture}</td>
+                <td>${Math.max(0, (operationTime - totalStandardCycleAll).toFixed(1))}</td>
+            `;
+
+            // Append the new row to the tbody
+            tbody.appendChild(newRow);
+        });
     }
 }

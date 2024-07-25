@@ -290,11 +290,22 @@ body {
     flex: 4.08;
 }
 
+.output-time {
+    max-width: 100%;
+    overflow-x: auto; /* For horizontal scrolling if needed */
+}
+
+.output-time .table-container {
+    max-height: 300px; /* Adjust based on your needs */
+    overflow-y: auto; /* Enable vertical scrolling */
+    display: block; /* Required for scrolling to work */
+}
+
 .output-time table,
 .quality-loss-time table {
     width: 100%;
     border-collapse: collapse;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
     background-color: #2a2a2a;
 }
 
