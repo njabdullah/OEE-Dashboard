@@ -25,7 +25,7 @@ function updateSummary(adjustedDate, adjustedTime, operationTime = 0) {
         if (summaryTime < 0) {
             summaryTime = 0;
         }
-        summaryTime = summaryTime.toFixed(1);
+        summaryTime = parseFloat(summaryTime.toFixed(1));  // Ensure summaryTime is a number
         document.getElementById('summary-time').textContent = summaryTime;
     }
 }

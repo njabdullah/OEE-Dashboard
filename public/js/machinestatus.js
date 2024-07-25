@@ -89,6 +89,7 @@ function updateMachineStatus(adjustedDate, adjustedTime) {
                     totalStopTimeElement.textContent = totalStopTime.toFixed(1) + ' min';
                     loadingTime = operationTime + totalStopTime;
                     loadingTimeElement.textContent = loadingTime.toFixed(1) + ' min';
+                    updateSummaryStopTimer();
                 }, 6000);
             }
         }

@@ -14,6 +14,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.3.0/raphael.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/justgage/1.3.1/justgage.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
 </head>
 <body onload="fetchData();">
     <div class="dashboard">
@@ -61,19 +62,27 @@
         <div class="gauge-charts">
             <div class="gauge">
                 <div class="gauge-title">Availability</div>
-                <div id="availabilityGauge"></div>
+                <div class="gauge-content">
+                    <div id="availabilityGauge"></div>
+                </div>
             </div>
             <div class="gauge">
                 <div class="gauge-title">Performance</div>
-                <div id="performanceGauge"></div>
+                <div class="gauge-content">
+                    <div id="performanceGauge"></div>
+                </div>
             </div>
             <div class="gauge">
                 <div class="gauge-title">Quality</div>
-                <div id="qualityGauge"></div>
+                <div class="gauge-content">
+                    <div id="qualityGauge"></div>
+                </div>
             </div>
             <div class="gauge oee">
                 <div class="gauge-title">OEE</div>
-                <div id="OEEGauge"></div>
+                <div class="gauge-content">
+                    <div id="OEEGauge"></div>
+                </div>
             </div>
         </div>
         <div class="summary">
@@ -113,7 +122,7 @@
                             <th>Standard Cycle</th>
                             <th>Quantity Total</th>
                             <th>Last Capture</th>
-                            <th>Stop Loss</th>
+                            <th>Speed Loss</th>
                         </tr>
                         <tr>
                             <td id="summary-type">-</td>
@@ -125,21 +134,21 @@
                     </table>
                 </div>
                 <div class="quality-loss-time">
-                    <h2>Quality Loss Time</h2>
+                    <h2>Summary Quality Loss</h2>
                     <table>
                         <tr>
-                            <th>Type</th>
-                            <th>Qty NG</th>
-                            <th>Cycle Time</th>
-                            <th>Qty Cycle</th>
-                            <th>Defect Time</th>
+                            <th>-</th>
+                            <th>-</th>
+                            <th>-</th>
+                            <th>-</th>
+                            <th>-</th>
                         </tr>
                         <tr>
-                            <td>B234</td>
-                            <td>3</td>
-                            <td>24</td>
-                            <td>1</td>
-                            <td>1.20</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
                         </tr>
                     </table>
                 </div>
@@ -161,26 +170,26 @@
                             <tr>
                                 <td style="background-color: #2df726;"></td>
                                 <td class="type">OEE</td>
-                                <td>35 min</td>
-                                <td>24%</td>
+                                <td id="oee-final-time">0.0 min</td>
+                                <td id="oee-final-percent">0.0%</td>
                             </tr>
                             <tr>
                                 <td style="background-color: #ff4048;"></td>
                                 <td class="type">Stop Loss</td>
-                                <td>35 min</td>
-                                <td>24%</td>
+                                <td id="stoploss-final-time">0.0 min</td>
+                                <td id="stoploss-final-percent">0.0%</td>
                             </tr>
                             <tr>
                                 <td style="background-color: #ffe716;"></td>
                                 <td class="type">Speed Loss</td>
-                                <td>35 min</td>
-                                <td>24%</td>
+                                <td id="speedloss-final-time">0.0 min</td>
+                                <td id="speedloss-final-percent">0.0%</td>
                             </tr>
                             <tr>
                                 <td style="background-color: #2279e3;"></td>
                                 <td class="type">Quality Loss</td>
-                                <td>35 min</td>
-                                <td>24%</td>
+                                <td id="qualityloss-final-time">0.0 min</td>
+                                <td id="qualityloss-final-percent">0.0%</td>
                             </tr>
                         </table>
                     </div>

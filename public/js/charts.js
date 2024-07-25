@@ -7,6 +7,8 @@ document.addEventListener('DOMContentLoaded', function() {
         min: 0,
         max: 100,
         label: "%",
+        valueFontColor: "#FFFFFF",
+        relativeGaugeSize: true,
         customSectors: {
             percents: true,
             ranges: [
@@ -23,6 +25,8 @@ document.addEventListener('DOMContentLoaded', function() {
         min: 0,
         max: 100,
         label: "%",
+        valueFontColor: "#FFFFFF",
+        relativeGaugeSize: true,
         customSectors: {
             percents: true,
             ranges: [
@@ -39,6 +43,8 @@ document.addEventListener('DOMContentLoaded', function() {
         min: 0,
         max: 100,
         label: "%",
+        valueFontColor: "#FFFFFF",
+        relativeGaugeSize: true,
         customSectors: {
             percents: true,
             ranges: [
@@ -55,6 +61,8 @@ document.addEventListener('DOMContentLoaded', function() {
         min: 0,
         max: 100,
         label: "%",
+        valueFontColor: "#FFFFFF",
+        relativeGaugeSize: true,
         customSectors: {
             percents: true,
             ranges: [
@@ -140,6 +148,14 @@ function updateChartData() {
     stopCategoryChart.update();
 }
 
+function updateSummaryStopTimer() {
+    document.getElementById('breakdown-time').textContent = stopTimes['Breakdown'].toFixed(1) + ' min';
+    document.getElementById('quality-time').textContent = stopTimes['Quality'].toFixed(1) + ' min';
+    document.getElementById('startup-time').textContent = stopTimes['Start Up'].toFixed(1) + ' min';
+    document.getElementById('tool-time').textContent = stopTimes['Tool'].toFixed(1) + ' min';
+    document.getElementById('others-time').textContent = stopTimes['Others'].toFixed(1) + ' min';
+}
+
 // --------------------------------------------------------------------------- CHART OEE VS LOSS ---------------------------------------------------------------------------
 document.addEventListener('DOMContentLoaded', function() {
     const ctx = document.getElementById('OEElossPieChart').getContext('2d');
@@ -180,6 +196,18 @@ document.addEventListener('DOMContentLoaded', function() {
         const StopLoss = (totalStopTime/loadingTime)*100;
         pieChart.data.datasets[0].data = [QualityLoss, SpeedLoss, StopLoss, OEE];
         pieChart.update();
+
+        document.getElementById('oee-final-time').textContent = `${(OEE * loadingTime / 100).toFixed(1)} min`;
+        document.getElementById('oee-final-percent').textContent = `${(OEE).toFixed(1)}%`;
+
+        document.getElementById('stoploss-final-time').textContent = `${(totalStopTime).toFixed(1)} min`;
+        document.getElementById('stoploss-final-percent').textContent = `${StopLoss.toFixed(1)}%`;
+
+        document.getElementById('speedloss-final-time').textContent = `${(summaryTime).toFixed(1)} min`;
+        document.getElementById('speedloss-final-percent').textContent = `${SpeedLoss.toFixed(1)}%`;
+
+        document.getElementById('qualityloss-final-time').textContent = '0.0 min';
+        document.getElementById('qualityloss-final-percent').textContent = '0.0%';
     }
 
     setInterval(function() {
