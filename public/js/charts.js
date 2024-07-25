@@ -79,7 +79,8 @@ document.addEventListener('DOMContentLoaded', function() {
         if (availability > 100) availability = 100;
         availabilityGauge.refresh(availability.toFixed(2));
     
-        let performance = ((quantityTotal * 2) / operationTime) * 100;
+        // Calculate performance using the new formula
+        let performance = (totalStandardCycleAll / operationTime) * 100;
         if (isNaN(performance) || !isFinite(performance)) performance = 0;
         if (performance > 100) performance = 100;
         performanceGauge.refresh(performance.toFixed(2));
@@ -93,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (isNaN(OEE) || !isFinite(OEE)) OEE = 0;
         if (OEE > 100) OEE = 100;
         OEEGauge.refresh(OEE.toFixed(2));
-    }, 1000);    
+    }, 1000);       
 });
 
 // --------------------------------------------------------------------------- CHART SUMMARY STOP TIME ---------------------------------------------------------------------------

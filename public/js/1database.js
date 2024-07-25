@@ -20,7 +20,7 @@ async function fetchData() {
             data_Linestop = [data_Linestop];
         }
 
-        // data_produksi
+        // data_produksi (including joined data)
         response = await fetch('/api/data-produksi');
         data_Produksi = await response.json();
 
@@ -32,5 +32,5 @@ async function fetchData() {
         console.error('Error fetching data:', error);
     }
 
-    updateMachineDetails()
+    updateMachineDetails();
 }

@@ -26,3 +26,4 @@ Route::get('/test-db', function () {
         return "Failed to connect to the database.";
     }
 });
+?>

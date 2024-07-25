@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\DataHeader;
 use App\Models\DataLinestop;
 use App\Models\DataProduksi;
+use App\Models\DataStandard;
 
 class DashboardController extends Controller
 {
@@ -28,7 +29,13 @@ class DashboardController extends Controller
 
     public function getProduksi()
     {
-        $data_produksi = DataProduksi::all();
+        $data_produksi = DataProduksi::join('data_standard', function($join) {
+            $join->on('data_produksi.line_produksi', '=', 'data_standard.line')
+                 ->on('data_produksi.tipe_barang', '=', 'data_standard.tipe_barang');
+        })
+        ->select('data_produksi.*', 'data_standard.standard_cycle')
+        ->get();
+
         return response()->json($data_produksi);
     }
 }
