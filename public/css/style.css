@@ -292,13 +292,13 @@ body {
 
 .output-time {
     max-width: 100%;
-    overflow-x: auto; /* For horizontal scrolling if needed */
+    overflow-x: auto;
 }
 
 .output-time .table-container {
-    max-height: 300px; /* Adjust based on your needs */
-    overflow-y: auto; /* Enable vertical scrolling */
-    display: block; /* Required for scrolling to work */
+    max-height: 300px;
+    overflow-y: auto;
+    display: block;
 }
 
 .output-time table,

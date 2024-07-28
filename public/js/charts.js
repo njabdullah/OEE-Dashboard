@@ -79,7 +79,6 @@ document.addEventListener('DOMContentLoaded', function() {
         if (availability > 100) availability = 100;
         availabilityGauge.refresh(availability.toFixed(2));
     
-        // Calculate performance using the new formula
         let performance = (totalStandardCycleAll / operationTime) * 100;
         if (isNaN(performance) || !isFinite(performance)) performance = 0;
         if (performance > 100) performance = 100;
@@ -163,7 +162,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const data = {
         labels: ['Quality Loss', 'Speed Loss', 'Stop Loss', 'OEE'],
         datasets: [{
-            data: [0, 0, 0],
+            data: [0, 0, 0, 0],
             backgroundColor: ['#2279e3', '#ffe716', '#ff4048', '#2df726'],
             borderColor: '#333333'
         }]
@@ -181,6 +180,19 @@ document.addEventListener('DOMContentLoaded', function() {
                         return tooltipItem.label + ': ' + tooltipItem.raw + '%';
                     }
                 }
+            },
+            datalabels: {
+                color: '#fff',
+                formatter: (value) => {
+                    if (value > 0 && !isNaN(value)) {
+                        return value + '%';
+                    }
+                    return '';
+                },
+                font: {
+                    weight: 'bold',
+                    size: 14
+                }
             }
         }
     };
@@ -188,30 +200,38 @@ document.addEventListener('DOMContentLoaded', function() {
     const pieChart = new Chart(ctx, {
         type: 'doughnut',
         data: data,
-        options: options
+        options: options,
+        plugins: [ChartDataLabels]
     });
 
-    function updateOEEvsLoss(totalStopTime, operationTime, totalStandardCycleAll, OEE) {
+    function updateOEEvsLoss(totalStopTime, summaryTime, OEE) {
         const QualityLoss = 0;
-        const SpeedLoss = (Math.max(0, (operationTime - totalStandardCycleAll).toFixed(1))/loadingTime)*100;
-        const StopLoss = (totalStopTime/loadingTime)*100;
-        pieChart.data.datasets[0].data = [QualityLoss, SpeedLoss, StopLoss, OEE];
+        const SpeedLoss = ((summaryTime / loadingTime) * 100).toFixed(1);
+        const StopLoss = ((totalStopTime / loadingTime) * 100).toFixed(1);
+        const OEEvsLoss = OEE.toFixed(1);
+        
+        pieChart.data.datasets[0].data = [
+            parseFloat(QualityLoss), 
+            parseFloat(SpeedLoss), 
+            parseFloat(StopLoss), 
+            parseFloat(OEEvsLoss)
+        ];
         pieChart.update();
-
+    
         document.getElementById('oee-final-time').textContent = `${(OEE * loadingTime / 100).toFixed(1)} min`;
-        document.getElementById('oee-final-percent').textContent = `${(OEE).toFixed(1)}%`;
-
-        document.getElementById('stoploss-final-time').textContent = `${(totalStopTime).toFixed(1)} min`;
-        document.getElementById('stoploss-final-percent').textContent = `${StopLoss.toFixed(1)}%`;
-
-        document.getElementById('speedloss-final-time').textContent = `${(Math.max(0, (operationTime - totalStandardCycleAll).toFixed(1))).toFixed(1)} min`;
-        document.getElementById('speedloss-final-percent').textContent = `${SpeedLoss.toFixed(1)}%`;
-
+        document.getElementById('oee-final-percent').textContent = `${OEE.toFixed(1)}%`;
+    
+        document.getElementById('stoploss-final-time').textContent = `${totalStopTime.toFixed(1)} min`;
+        document.getElementById('stoploss-final-percent').textContent = `${parseFloat(StopLoss).toFixed(1)}%`;
+    
+        document.getElementById('speedloss-final-time').textContent = `${summaryTime} min`;
+        document.getElementById('speedloss-final-percent').textContent = `${parseFloat(SpeedLoss).toFixed(1)}%`;
+    
         document.getElementById('qualityloss-final-time').textContent = '0.0 min';
         document.getElementById('qualityloss-final-percent').textContent = '0.0%';
     }
-
+    
     setInterval(function() {
-        updateOEEvsLoss(totalStopTime, operationTime, totalStandardCycleAll, OEE);
-    }, 1000);
+        updateOEEvsLoss(totalStopTime, summaryTime, OEE);
+    }, 1000);    
 });

@@ -128,7 +128,6 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <!-- Rows will be dynamically added here -->
                             </tbody>
                         </table>
                     </div>
