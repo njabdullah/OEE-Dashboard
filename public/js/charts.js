@@ -205,9 +205,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     function updateOEEvsLoss(qualityLossTotal, totalStopTime, summaryTime, OEE) {
-        const QualityLoss = ((qualityLossTotal / loadingTime) * 100).toFixed(1);
-        const SpeedLoss = ((summaryTime / loadingTime) * 100).toFixed(1);
-        const StopLoss = ((totalStopTime / loadingTime) * 100).toFixed(1);
+        const QualityLoss = (loadingTime === 0 ? 0 : ((qualityLossTotal / loadingTime) * 100).toFixed(1));
+        const SpeedLoss = (loadingTime === 0 ? 0 : ((summaryTime / loadingTime) * 100).toFixed(1));
+        const StopLoss = (loadingTime === 0 ? 0 : ((totalStopTime / loadingTime) * 100).toFixed(1));
         const OEEvsLoss = OEE.toFixed(1);
         
         pieChart.data.datasets[0].data = [
@@ -233,5 +233,5 @@ document.addEventListener('DOMContentLoaded', function() {
     
     setInterval(function() {
         updateOEEvsLoss(qualityLossTotal, totalStopTime, summaryTime, OEE);
-    }, 1000);    
+    }, 1000);
 });

@@ -17,11 +17,11 @@
 //     dateElement.textContent = date;
 //     timeElement.textContent = time;
 
-//     updateMachineStatus(date, time);
+//     updateMachineDetails(adjustedTime, date, time);
 //     requestAnimationFrame(updateDateTime);
 // }
 
-var startTime = new Date('2024-07-02T21:00:58');
+var startTime = new Date('2024-07-02T21:00:55');
 var initialTime = new Date();
 var dateElement = document.getElementById('date');
 var timeElement = document.getElementById('time');
@@ -41,6 +41,6 @@ function updateDateTime() {
     dateElement.textContent = date;
     timeElement.textContent = time;
 
-    updateMachineStatus(date, time);
+    updateMachineDetails(adjustedTime, date, time);
     requestAnimationFrame(updateDateTime);
 }

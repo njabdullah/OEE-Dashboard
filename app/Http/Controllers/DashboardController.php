@@ -18,7 +18,7 @@ class DashboardController extends Controller
 
     public function getDataHeader()
     {
-        $data_header = DataHeader::first();
+        $data_header = DataHeader::all();
         return response()->json($data_header);
     }
 

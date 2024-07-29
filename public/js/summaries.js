@@ -10,6 +10,25 @@ let lastQualityLossUpdateTime = null;
 function updateSummary(adjustedDate, adjustedTime, operationTime = 0) {
     const currentDateTime = new Date(`${adjustedDate}T${adjustedTime}`);
     
+    let isWithinPeriod = false;
+    for (const entry of data_header) {
+        const startDateTime = new Date(`${entry.tanggal}T${entry.start_prod}`);
+        let endDateTime = new Date(`${entry.tanggal}T${entry.finish_prod}`);
+        
+        if (endDateTime < startDateTime) {
+            endDateTime.setDate(endDateTime.getDate() + 1);
+        }
+        
+        if (currentDateTime >= startDateTime && currentDateTime <= endDateTime) {
+            isWithinPeriod = true;
+            break;
+        }
+    }
+    
+    if (!isWithinPeriod) {
+        return;
+    }
+
     if (lastUpdateTime && currentDateTime.getTime() === lastUpdateTime.getTime()) {
         return;
     }
@@ -81,11 +100,44 @@ function updateSummary(adjustedDate, adjustedTime, operationTime = 0) {
 }
 
 function updateQualityLossTable(latestEntries, currentDateTime, operationTime) {
+    const tbody = document.querySelector('.quality-loss-time tbody');
+
+    let isWithinPeriod = false;
+    for (const entry of data_header) {
+        const startDateTime = new Date(`${entry.tanggal}T${entry.start_prod}`);
+        let endDateTime = new Date(`${entry.tanggal}T${entry.finish_prod}`);
+        
+        if (endDateTime < startDateTime) {
+            endDateTime.setDate(endDateTime.getDate() + 1);
+        }
+        
+        if (currentDateTime >= startDateTime && currentDateTime <= endDateTime) {
+            isWithinPeriod = true;
+            break;
+        }
+    }
+    
+    if (!isWithinPeriod) {
+        tbody.innerHTML = '';
+        quantityLossTotal = 0;
+        qualityLossTotal = 0;
+
+        const emptyRow = document.createElement('tr');
+        emptyRow.innerHTML = `
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+        `;
+        tbody.appendChild(emptyRow);
+
+        lastQualityLossUpdateTime = currentDateTime;
+        return;
+    }
+
     if (lastQualityLossUpdateTime && currentDateTime.getTime() === lastQualityLossUpdateTime.getTime()) {
         return;
     }
 
-    const tbody = document.querySelector('.quality-loss-time tbody');
     tbody.innerHTML = '';
     quantityLossTotal = 0;
     qualityLossTotal = 0;
