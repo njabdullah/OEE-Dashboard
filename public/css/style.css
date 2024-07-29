@@ -24,6 +24,7 @@ body {
     flex: 1;
 }
 
+/* first section (title and clock) */
 .header {
     display: flex;
     justify-content: space-between;
@@ -44,7 +45,7 @@ body {
     color: #ffffff; 
 }
 
-/* first section (machine information, status, and trouble information) */
+/* second section (machine information, status, and trouble information) */
 .basic-info {
     display: flex;
     justify-content: center;
@@ -128,7 +129,7 @@ body {
     font-weight: bold;
 }
 
-/* second section (total loading time, total stop time, total operation time) */
+/* third section (total loading time, total stop time, total operation time) */
 .metrics {
     display: flex;
     justify-content: space-between;
@@ -170,7 +171,7 @@ body {
     color: #33cc33;
 }
 
-/* third section (availability, performance, quality, and OEE) */
+/* fourth section (availability, performance, quality, and OEE) */
 .gauge-charts {
     display: flex;
     justify-content: space-between;
@@ -217,7 +218,7 @@ body {
     position: absolute;
 }
 
-/* fourth section (summaries) */
+/* fifth section (summaries) */
 .summary {
     display: flex;
     justify-content: space-between;

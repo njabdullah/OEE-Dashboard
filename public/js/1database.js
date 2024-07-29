@@ -20,7 +20,7 @@ async function fetchData() {
             data_Linestop = [data_Linestop];
         }
 
-        // data_produksi (including joined data)
+        // data_produksi (including joined data_standard and data_qualityloss)
         response = await fetch('/api/data-produksi');
         data_Produksi = await response.json();
 

@@ -12,7 +12,6 @@ function updateMachineStatus(adjustedDate, adjustedTime) {
     const loadingTimeElement = document.getElementById('loading-time');
 
     const currentDateTime = new Date(`${adjustedDate}T${adjustedTime}`);
-    console.log('Current DateTime:', currentDateTime);
 
     let machineRunning = false;
     let activeStopEntry = null;

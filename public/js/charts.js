@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (performance > 100) performance = 100;
         performanceGauge.refresh(performance.toFixed(2));
     
-        let quality = (quantityTotal / quantityTotal) * 100;
+        let quality = ((quantityTotal - quantityLossTotal) / quantityTotal) * 100;
         if (isNaN(quality) || !isFinite(quality)) quality = 0;
         if (quality > 100) quality = 100;
         qualityGauge.refresh(quality.toFixed(2));
@@ -204,8 +204,8 @@ document.addEventListener('DOMContentLoaded', function() {
         plugins: [ChartDataLabels]
     });
 
-    function updateOEEvsLoss(totalStopTime, summaryTime, OEE) {
-        const QualityLoss = 0;
+    function updateOEEvsLoss(qualityLossTotal, totalStopTime, summaryTime, OEE) {
+        const QualityLoss = ((qualityLossTotal / loadingTime) * 100).toFixed(1);
         const SpeedLoss = ((summaryTime / loadingTime) * 100).toFixed(1);
         const StopLoss = ((totalStopTime / loadingTime) * 100).toFixed(1);
         const OEEvsLoss = OEE.toFixed(1);
@@ -224,14 +224,14 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('stoploss-final-time').textContent = `${totalStopTime.toFixed(1)} min`;
         document.getElementById('stoploss-final-percent').textContent = `${parseFloat(StopLoss).toFixed(1)}%`;
     
-        document.getElementById('speedloss-final-time').textContent = `${summaryTime} min`;
+        document.getElementById('speedloss-final-time').textContent = `${summaryTime.toFixed(1)} min`;
         document.getElementById('speedloss-final-percent').textContent = `${parseFloat(SpeedLoss).toFixed(1)}%`;
     
-        document.getElementById('qualityloss-final-time').textContent = '0.0 min';
-        document.getElementById('qualityloss-final-percent').textContent = '0.0%';
+        document.getElementById('qualityloss-final-time').textContent = `${qualityLossTotal.toFixed(1)} min`;
+        document.getElementById('qualityloss-final-percent').textContent = `${parseFloat(QualityLoss).toFixed(1)}%`;
     }
     
     setInterval(function() {
-        updateOEEvsLoss(totalStopTime, summaryTime, OEE);
+        updateOEEvsLoss(qualityLossTotal, totalStopTime, summaryTime, OEE);
     }, 1000);    
 });
