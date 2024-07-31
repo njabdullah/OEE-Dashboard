@@ -5,12 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OEE Monitoring System</title>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <script src="{{ asset('js/dateTime.js') }}" defer></script>
-    <script src="{{ asset('js/machinestatus.js') }}" defer></script>
-    <script src="{{ asset('js/machinedetail.js') }}" defer></script>
-    <script src="{{ asset('js/charts.js') }}" defer></script>
     <script src="{{ asset('js/1database.js') }}" defer></script>
-    <script src="{{ asset('js/summaries.js') }}" defer></script>
+    <script src="{{ asset('js/dashboard.js') }}" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.3.0/raphael.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/justgage/1.3.1/justgage.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
