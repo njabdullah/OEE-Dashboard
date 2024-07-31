@@ -18,10 +18,11 @@
 //     timeElement.textContent = time;
 
 //     updateMachineDetails(adjustedTime, date, time);
-//     requestAnimationFrame(updateDateTime);
 // }
 
-var startTime = new Date('2024-07-02T21:00:55');
+// setInterval(updateDateTime, 1000);
+
+var startTime = new Date('2024-07-02T20:59:55');
 var initialTime = new Date();
 var dateElement = document.getElementById('date');
 var timeElement = document.getElementById('time');
@@ -42,5 +43,6 @@ function updateDateTime() {
     timeElement.textContent = time;
 
     updateMachineDetails(adjustedTime, date, time);
-    requestAnimationFrame(updateDateTime);
 }
+
+setInterval(updateDateTime, 1000);

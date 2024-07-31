@@ -28,9 +28,13 @@ async function fetchData() {
             data_Produksi = [data_Produksi];
         }
 
+        updateDateTime();
     } catch (error) {
         console.error('Error fetching data:', error);
     }
-
-    updateDateTime();
 }
+
+window.onload = function() {
+    fetchData();
+    setInterval(fetchData, 500);
+};

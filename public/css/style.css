@@ -297,7 +297,18 @@ body {
 }
 
 .output-time .table-container {
-    max-height: 300px;
+    max-height: 120px;
+    overflow-y: auto;
+    display: block;
+}
+
+.quality-loss-time {
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+.quality-loss-time .table-container {
+    max-height: 120px;
     overflow-y: auto;
     display: block;
 }
