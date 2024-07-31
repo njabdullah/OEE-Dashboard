@@ -31,9 +31,9 @@
                     <div>Machine Information</div>
                 </div>
                 <div class="machine-detail">
-                    <div id="line"></div>
-                    <div id="linedesc"></div>
-                    <div id="shift"></div>
+                    <div class="more-detail" id="line"></div>
+                    <div class="more-detail" id="linedesc"></div>
+                    <div class="more-detail" id="shift"></div>
                 </div>
             </div>
             <div class="status-machine">

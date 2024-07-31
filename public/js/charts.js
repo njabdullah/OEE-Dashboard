@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
         max: 100,
         label: "%",
         valueFontColor: "#FFFFFF",
+        valueMinFontSize: 30,
         relativeGaugeSize: true,
         customSectors: {
             percents: true,
@@ -26,6 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
         max: 100,
         label: "%",
         valueFontColor: "#FFFFFF",
+        valueMinFontSize: 30,
         relativeGaugeSize: true,
         customSectors: {
             percents: true,
@@ -44,6 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
         max: 100,
         label: "%",
         valueFontColor: "#FFFFFF",
+        valueMinFontSize: 30,
         relativeGaugeSize: true,
         customSectors: {
             percents: true,
@@ -62,6 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
         max: 100,
         label: "%",
         valueFontColor: "#FFFFFF",
+        valueMinFontSize: 30,
         relativeGaugeSize: true,
         customSectors: {
             percents: true,

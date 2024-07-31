@@ -63,22 +63,22 @@ body {
 }
 
 .machine-title {
-    display: flex;
-    justify-content: space-around;
-    padding: 5px;
-    background-color: #2a2a2a;
-    border-radius: 5px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     font-size: 15px;
 }
 
 .machine-detail {
     display: flex;
     justify-content: space-around;
-    padding: 5px;
+    font-size: 24px;
+    font-weight: bold;
+    gap: 5px;
+}
+
+.machine-detail .more-detail {
+    flex: 1;
     background-color: #2a2a2a;
     border-radius: 5px;
-    font-size: 15px;
 }
 
 .status-machine {
@@ -196,9 +196,9 @@ body {
 }
 
 .gauge .gauge-title {
-    font-size: 15px;
+    font-size: 20px;
     color: #ffffff;
-    margin-bottom: 10px;
+    margin: 10px;
     align-self: center;
 }
 
