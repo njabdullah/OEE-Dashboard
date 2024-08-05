@@ -2,31 +2,6 @@
 // ---------------------------------------------------------------------------------------- ATUR DATE AND TIME ----------------------------------------------------------------------------------------
 // ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-// var initialTime = new Date();
-// var dateElement = document.getElementById('date');
-// var timeElement = document.getElementById('time');
-
-// function updateDateTime() {
-//     var now = new Date();
-//     var timeSinceStart = now.getTime() - initialTime.getTime();
-//     var adjustedTime = new Date(initialTime.getTime() + timeSinceStart);
-
-//     var date = adjustedTime.getFullYear() + '-' +
-//                ('0' + (adjustedTime.getMonth() + 1)).slice(-2) + '-' +
-//                ('0' + adjustedTime.getDate()).slice(-2);
-//     var time = ('0' + adjustedTime.getHours()).slice(-2) + ':' +
-//                ('0' + adjustedTime.getMinutes()).slice(-2) + ':' +
-//                ('0' + adjustedTime.getSeconds()).slice(-2);
-
-//     dateElement.textContent = date;
-//     timeElement.textContent = time;
-
-//     updateMachineDetails(adjustedTime, date, time);
-// }
-
-// setInterval(updateDateTime, 1000);
-
-var startTime = new Date('2024-07-02T20:59:55');
 var initialTime = new Date();
 var dateElement = document.getElementById('date');
 var timeElement = document.getElementById('time');
@@ -34,7 +9,7 @@ var timeElement = document.getElementById('time');
 function updateDateTime() {
     var now = new Date();
     var timeSinceStart = now.getTime() - initialTime.getTime();
-    var adjustedTime = new Date(startTime.getTime() + timeSinceStart);
+    var adjustedTime = new Date(initialTime.getTime() + timeSinceStart);
 
     var date = adjustedTime.getFullYear() + '-' +
                ('0' + (adjustedTime.getMonth() + 1)).slice(-2) + '-' +
@@ -51,6 +26,31 @@ function updateDateTime() {
 
 setInterval(updateDateTime, 1000);
 
+// var startTime = new Date('2024-07-02T20:59:55');
+// var initialTime = new Date();
+// var dateElement = document.getElementById('date');
+// var timeElement = document.getElementById('time');
+
+// function updateDateTime() {
+//     var now = new Date();
+//     var timeSinceStart = now.getTime() - initialTime.getTime();
+//     var adjustedTime = new Date(startTime.getTime() + timeSinceStart);
+
+//     var date = adjustedTime.getFullYear() + '-' +
+//                ('0' + (adjustedTime.getMonth() + 1)).slice(-2) + '-' +
+//                ('0' + adjustedTime.getDate()).slice(-2);
+//     var time = ('0' + adjustedTime.getHours()).slice(-2) + ':' +
+//                ('0' + adjustedTime.getMinutes()).slice(-2) + ':' +
+//                ('0' + adjustedTime.getSeconds()).slice(-2);
+
+//     dateElement.textContent = date;
+//     timeElement.textContent = time;
+
+//     updateMachineDetails(adjustedTime, date, time);
+// }
+
+// setInterval(updateDateTime, 1000);
+
 // ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------- ATUR MACHINE INFORMATION (LINE, LINEDESC, SHIFT) -------------------------------------------------------------------------
 // ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -66,7 +66,7 @@ function updateMachineDetails(currentTime, date, time) {
         const endDateTime = new Date(`${entry.tanggal}T${entry.finish_prod}`);
 
         if (endDateTime < startDateTime) {
-            endDateTime.setDate(endDateTime.getDate() + 1);
+            startDateTime.setDate(startDateTime.getDate() - 1);
         }
 
         if (currentTime >= startDateTime && currentTime <= endDateTime) {
@@ -114,7 +114,7 @@ function updateMachineStatus(adjustedDate, adjustedTime) {
         const endDateTime = new Date(`${entry.tanggal}T${entry.finish_prod}`);
 
         if (endDateTime < startDateTime) {
-            endDateTime.setDate(endDateTime.getDate() + 1);
+            startDateTime.setDate(startDateTime.getDate() - 1);
         }
 
         if (currentDateTime >= startDateTime && currentDateTime <= endDateTime) {
@@ -130,7 +130,7 @@ function updateMachineStatus(adjustedDate, adjustedTime) {
             const endTime = new Date(`${adjustedDate}T${stopEntry.selesai}`);
 
             if (endTime < startTime) {
-                endTime.setDate(endTime.getDate() + 1);
+                startTime.setDate(startTime.getDate() - 1);
             }
 
             if (currentDateTime >= startTime && currentDateTime <= endTime) {
@@ -211,7 +211,7 @@ function updateSummary(adjustedDate, adjustedTime, operationTime = 0) {
         let endDateTime = new Date(`${entry.tanggal}T${entry.finish_prod}`);
         
         if (endDateTime < startDateTime) {
-            endDateTime.setDate(endDateTime.getDate() + 1);
+            startDateTime.setDate(startDateTime.getDate() - 1);
         }
         
         if (currentDateTime >= startDateTime && currentDateTime <= endDateTime) {
@@ -303,7 +303,7 @@ function updateQualityLossTable(latestEntries, currentDateTime, operationTime) {
         let endDateTime = new Date(`${entry.tanggal}T${entry.finish_prod}`);
         
         if (endDateTime < startDateTime) {
-            endDateTime.setDate(endDateTime.getDate() + 1);
+            startDateTime.setDate(startDateTime.getDate() - 1);
         }
         
         if (currentDateTime >= startDateTime && currentDateTime <= endDateTime) {
