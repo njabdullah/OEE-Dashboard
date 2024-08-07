@@ -66,4 +66,4 @@ To clone and set up the OEE Dashboard, follow these steps:
 
 ## Bug
 
-1. Sometimes counting time stops when not focused on windows due to the set time in JavaScript.
+1. Sometimes counting time stops when not focused on windows due to the set time in JavaScript (SOLVED)

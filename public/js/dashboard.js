@@ -2,31 +2,6 @@
 // ---------------------------------------------------------------------------------------- ATUR DATE AND TIME ----------------------------------------------------------------------------------------
 // ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-var initialTime = new Date();
-var dateElement = document.getElementById('date');
-var timeElement = document.getElementById('time');
-
-function updateDateTime() {
-    var now = new Date();
-    var timeSinceStart = now.getTime() - initialTime.getTime();
-    var adjustedTime = new Date(initialTime.getTime() + timeSinceStart);
-
-    var date = adjustedTime.getFullYear() + '-' +
-               ('0' + (adjustedTime.getMonth() + 1)).slice(-2) + '-' +
-               ('0' + adjustedTime.getDate()).slice(-2);
-    var time = ('0' + adjustedTime.getHours()).slice(-2) + ':' +
-               ('0' + adjustedTime.getMinutes()).slice(-2) + ':' +
-               ('0' + adjustedTime.getSeconds()).slice(-2);
-
-    dateElement.textContent = date;
-    timeElement.textContent = time;
-
-    updateMachineDetails(adjustedTime, date, time);
-}
-
-setInterval(updateDateTime, 1000);
-
-// var startTime = new Date('2024-07-02T20:59:55');
 // var initialTime = new Date();
 // var dateElement = document.getElementById('date');
 // var timeElement = document.getElementById('time');
@@ -34,7 +9,7 @@ setInterval(updateDateTime, 1000);
 // function updateDateTime() {
 //     var now = new Date();
 //     var timeSinceStart = now.getTime() - initialTime.getTime();
-//     var adjustedTime = new Date(startTime.getTime() + timeSinceStart);
+//     var adjustedTime = new Date(initialTime.getTime() + timeSinceStart);
 
 //     var date = adjustedTime.getFullYear() + '-' +
 //                ('0' + (adjustedTime.getMonth() + 1)).slice(-2) + '-' +
@@ -50,6 +25,31 @@ setInterval(updateDateTime, 1000);
 // }
 
 // setInterval(updateDateTime, 1000);
+
+var startTime = new Date('2024-07-02T20:59:55');
+var initialTime = new Date();
+var dateElement = document.getElementById('date');
+var timeElement = document.getElementById('time');
+
+function updateDateTime() {
+    var now = new Date();
+    var timeSinceStart = now.getTime() - initialTime.getTime();
+    var adjustedTime = new Date(startTime.getTime() + timeSinceStart);
+
+    var date = adjustedTime.getFullYear() + '-' +
+               ('0' + (adjustedTime.getMonth() + 1)).slice(-2) + '-' +
+               ('0' + adjustedTime.getDate()).slice(-2);
+    var time = ('0' + adjustedTime.getHours()).slice(-2) + ':' +
+               ('0' + adjustedTime.getMinutes()).slice(-2) + ':' +
+               ('0' + adjustedTime.getSeconds()).slice(-2);
+
+    dateElement.textContent = date;
+    timeElement.textContent = time;
+
+    updateMachineDetails(adjustedTime, date, time);
+}
+
+setInterval(updateDateTime, 1000);
 
 // ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------- ATUR MACHINE INFORMATION (LINE, LINEDESC, SHIFT) -------------------------------------------------------------------------
@@ -104,14 +104,15 @@ function updateMachineStatus(adjustedDate, adjustedTime) {
     const totalStopTimeElement = document.getElementById('total-stop-time');
     const loadingTimeElement = document.getElementById('loading-time');
 
-    const currentDateTime = new Date(`${adjustedDate}T${adjustedTime}`);
+    currentDateTime = new Date(`${adjustedDate}T${adjustedTime}`);
 
     let machineRunning = false;
     let activeStopEntry = null;
+    let startDateTime;
 
     for (const entry of data_header) {
-        const startDateTime = new Date(`${entry.tanggal}T${entry.start_prod}`);
-        const endDateTime = new Date(`${entry.tanggal}T${entry.finish_prod}`);
+        startDateTime = new Date(`${entry.tanggal}T${entry.start_prod}`);
+        endDateTime = new Date(`${entry.tanggal}T${entry.finish_prod}`);
 
         if (endDateTime < startDateTime) {
             startDateTime.setDate(startDateTime.getDate() - 1);
@@ -150,7 +151,7 @@ function updateMachineStatus(adjustedDate, adjustedTime) {
 
             if (!operationInterval) {
                 operationInterval = setInterval(() => {
-                    operationTime += 0.1;
+                    operationTime = (currentDateTime - startDateTime - (totalStopTime*60000)) / 60000;
                     operationTimeElement.textContent = operationTime.toFixed(1) + ' min';
                     loadingTime = operationTime + totalStopTime;
                     loadingTimeElement.textContent = loadingTime.toFixed(1) + ' min';
@@ -163,22 +164,38 @@ function updateMachineStatus(adjustedDate, adjustedTime) {
             machineStatusElement.textContent = "STOP";
             clearInterval(operationInterval);
             operationInterval = null;
-
+    
             if (!totalStopInterval) {
                 totalStopInterval = setInterval(() => {
-                    totalStopTime += 0.1;
+                    let accumulatedStopTime = 0;
+    
+                    for (const stopEntry of data_Linestop) {
+                        const startTime = new Date(`${adjustedDate}T${stopEntry.mulai}`);
+                        const endTime = stopEntry.selesai ? new Date(`${adjustedDate}T${stopEntry.selesai}`) : currentDateTime;
+    
+                        if (endTime < startTime) {
+                            startTime.setDate(startTime.getDate() - 1);
+                        }
+    
+                        if (currentDateTime >= startTime) {
+                            accumulatedStopTime += (Math.min(currentDateTime, endTime) - startTime) / 60000;
+                        }
+                    }
+    
+                    totalStopTime = accumulatedStopTime;
+                    totalStopTimeElement.textContent = totalStopTime.toFixed(1) + ' min';
+    
                     if (activeStopEntry) {
                         troubleInformationElement.textContent = activeStopEntry.downtimedesc;
-
+    
                         if (stopTimes[activeStopEntry.downtimedesc] !== undefined) {
                             stopTimes[activeStopEntry.downtimedesc] += 0.1;
                         } else {
                             stopTimes['Others'] += 0.1;
                         }
-                        
+    
                         updateChartData();
                     }
-                    totalStopTimeElement.textContent = totalStopTime.toFixed(1) + ' min';
                     loadingTime = operationTime + totalStopTime;
                     loadingTimeElement.textContent = loadingTime.toFixed(1) + ' min';
                     updateSummaryStopTimer();
@@ -186,7 +203,7 @@ function updateMachineStatus(adjustedDate, adjustedTime) {
             }
         }
         updateSummary(adjustedDate, adjustedTime, operationTime);
-    }
+    }    
 }
 
 // ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -194,7 +211,7 @@ function updateMachineStatus(adjustedDate, adjustedTime) {
 // ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 let quantityTotal = 0;
-let totalStandardCycleAll = 0;
+let totalStandardCycleAll = null;
 let summaryTime = 0;
 let quantityLossTotal = 0;
 let qualityLossTotal = 0;
@@ -229,7 +246,7 @@ function updateSummary(adjustedDate, adjustedTime, operationTime = 0) {
     }
 
     quantityTotal = 0;
-    totalStandardCycleAll = 0;
+    totalStandardCycleAll = null;
     summaryTime = 0;
 
     const latestEntries = {};
@@ -385,7 +402,7 @@ let OEE = 0;
 document.addEventListener('DOMContentLoaded', function() {
     const OEEGauge = new JustGage({
         id: "OEEGauge",
-        value: 0,
+        value: 100,
         min: 0,
         max: 100,
         label: "%",
@@ -404,7 +421,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const availabilityGauge = new JustGage({
         id: "availabilityGauge",
-        value: 0,
+        value: 100,
         min: 0,
         max: 100,
         label: "%",
@@ -423,7 +440,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const performanceGauge = new JustGage({
         id: "performanceGauge",
-        value: 0,
+        value: 100,
         min: 0,
         max: 100,
         label: "%",
@@ -442,7 +459,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const qualityGauge = new JustGage({
         id: "qualityGauge",
-        value: 0,
+        value: 100,
         min: 0,
         max: 100,
         label: "%",
@@ -461,25 +478,25 @@ document.addEventListener('DOMContentLoaded', function() {
 
     setInterval(() => {
         let availability = (operationTime / loadingTime) * 100;
-        if (isNaN(availability) || !isFinite(availability)) availability = 0;
+        if (isNaN(availability) || !isFinite(availability)) availability = 100;
         if (availability > 100) availability = 100;
         availabilityGauge.refresh(availability.toFixed(2));
     
         let performance = (totalStandardCycleAll / operationTime) * 100;
-        if (isNaN(performance) || !isFinite(performance)) performance = 0;
+        if (totalStandardCycleAll === null || isNaN(performance) || !isFinite(performance)) performance = 100;
         if (performance > 100) performance = 100;
         performanceGauge.refresh(performance.toFixed(2));
     
         let quality = ((quantityTotal - quantityLossTotal) / quantityTotal) * 100;
-        if (isNaN(quality) || !isFinite(quality)) quality = 0;
+        if (isNaN(quality) || !isFinite(quality)) quality = 100;
         if (quality > 100) quality = 100;
         qualityGauge.refresh(quality.toFixed(2));
     
         OEE = (availability / 100) * (performance / 100) * (quality / 100) * 100;
-        if (isNaN(OEE) || !isFinite(OEE)) OEE = 0;
+        if (isNaN(OEE) || !isFinite(OEE)) OEE = 100;
         if (OEE > 100) OEE = 100;
         OEEGauge.refresh(OEE.toFixed(2));
-    }, 1000);       
+    }, 1000);
 });
 
 // --------------------------------------------------------------------------- CHART SUMMARY STOP TIME ---------------------------------------------------------------------------
